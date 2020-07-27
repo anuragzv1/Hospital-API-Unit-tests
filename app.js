@@ -13,7 +13,7 @@ app.use('/', require('./routes/index'));
 
 
 //Starting the node app
-app.listen(port , function(err){
+module.exports = app.listen(port , function(err){
     if(err){
         return console.log('Error starting the app at port', port);
     }
