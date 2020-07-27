@@ -50,7 +50,7 @@ describe('Doctor',()=>{
         });
     });
 
-    //this test passes if the user is able to login from correct credentials
+    //this test passes if the dcotor is able to login from correct credentials
     describe('/POST /doctors/login', ()=>{
         it('Should login and return Auth Token',(done)=>{
             chai.request(app)

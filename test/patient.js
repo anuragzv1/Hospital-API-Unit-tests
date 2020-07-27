@@ -97,7 +97,7 @@ describe('Patient API', () => {
             });
         });
 
-    //this test passes if unauthorized tokens are blocked
+    //this test passes if unauthorized tokens are blocked from creating report
     describe('/POST /patients/:id/create-report', () => {
         it('Should not allow Invalid Tokens/Expired tokens to create reports', async() => {
             let res = await chai.request(app)
