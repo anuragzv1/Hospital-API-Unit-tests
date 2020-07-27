@@ -9,6 +9,12 @@ We’re going to design an API using Node.js and MongoDB for the doctors of a Ho
 5) The app should run on default port 8000 or if you've mentioned env port it'll run on that.
 6) Not working? Ping me!.
 
+## How to test if everything runs as expected?
+1) Install Mocha globally using `npm install --global mocha`
+2) If some read write error occur in Mac/Linux try `sudo npm install --global mocha`
+3) Open Terminal and type `npm test`
+4) Test will run and tell which API's failed which worked.
+
 ## What are the Different API's in this project?
 1)`/doctors/register` → Registers a new Doctor to the hospital Database takes in madatory `username` and `password`  
 2) `/doctors/login` → Doctor Login with username and password, if Authenticated, Returns the JSON Web token, takes in madatory `username` and `password`  
@@ -25,3 +31,4 @@ We’re going to design an API using Node.js and MongoDB for the doctors of a Ho
 4) `Models` : Mongoose Models for the Doctors, Patients and reports!
 5) `routes` : index.js which manages routes efficiently to have a scalable project.
 6) `views` : Empty For now :)
+7) `test` : Contains various testing protocols for efficient debugging of patient/doctor/report API's
