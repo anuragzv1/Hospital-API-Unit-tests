@@ -1,7 +1,7 @@
 let chai = require('chai');
 let chaiHttp = require('chai-http');
 let mongoose = require('mongoose');
-let Patient = require('../models/Patient');
+let Report = require('../models/Report');
 let should = chai.should();
 let app = require('../app');
 chai.use(chaiHttp);
@@ -21,6 +21,7 @@ describe('Reports API', () => {
 
         token = res.body.token;
     });
+
 
     //this test passes if reports of a particular type are returned
     describe('POST /reports/:status', () => {

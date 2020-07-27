@@ -2,6 +2,7 @@ let chai = require('chai');
 let chaiHttp = require('chai-http');
 let mongoose = require('mongoose');
 let Patient = require('../models/Patient');
+let Report = require('../models/Report');
 let should = chai.should();
 let app = require('../app');
 chai.use(chaiHttp);
@@ -25,8 +26,10 @@ describe('Patient API', () => {
     //remove all patients from the collection before creating one
     before((done) => {
         Patient.deleteMany({}, (err) => {
-            done();
-        })
+        });
+        Report.deleteMany({},(err)=>{
+        });
+        done();
     });
 
     //this test passes if new patients are successfully registered
@@ -125,6 +128,17 @@ describe('Patient API', () => {
         });
     });
 
+    //this test will pass if we get back the newly creted report
+    describe('/POST /patients/:id/all_reports',()=>{
+        it('Should get the newly created report', async()=>{
+            let report = await chai.request(app)
+            .post('/api/v1/patients/987654321/all_reports')
+            .type('form');
+            report.status.should.be.eql(200);
+            report.body.should.be.a('array');
+
+        });
+    });
 
 });
 
